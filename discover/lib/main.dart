@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// discovered text,center,scaffold, body, appbar, floatbutton
+// discovered text,center,scaffold, body, appbar, float button
 void main(){
   runApp(MaterialApp(
     home:Scaffold(
