@@ -1,3 +1,4 @@
+import 'package:explore_widgets/BusinessCard.dart';
 import 'package:flutter/material.dart';
 import 'package:toast/toast.dart';
 
@@ -7,7 +8,8 @@ void main() {
     // home:ContainersDemo()
     // home:RowDemo()
     // home:ColumnDemo()
-    home:ExpandDemo()
+    // home:ExpandDemo()
+    home:BusinessCard()
   ));
 }
 
