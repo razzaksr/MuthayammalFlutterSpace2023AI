@@ -1,4 +1,5 @@
 import 'package:explore_widgets/BusinessCard.dart';
+import 'package:explore_widgets/Kart.dart';
 import 'package:flutter/material.dart';
 import 'package:toast/toast.dart';
 
@@ -9,7 +10,8 @@ void main() {
     // home:RowDemo()
     // home:ColumnDemo()
     // home:ExpandDemo()
-    home:BusinessCard()
+    // home:BusinessCard()
+    home:Kart()
   ));
 }
 
