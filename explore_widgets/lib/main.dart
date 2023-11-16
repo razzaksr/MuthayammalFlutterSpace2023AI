@@ -4,9 +4,105 @@ import 'package:toast/toast.dart';
 void main() {
   runApp(MaterialApp(
     // home: ButtonsDemo(),
-    home:ContainersDemo()
+    // home:ContainersDemo()
+    // home:RowDemo()
+    // home:ColumnDemo()
+    home:ExpandDemo()
   ));
 }
+
+class ExpandDemo extends StatelessWidget {
+  const ExpandDemo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('column alignment demo'),
+          centerTitle: true,
+        ),
+        body:Container(
+          color: Colors.lightBlue,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                  flex: 2,
+                  child: Icon(
+                      Icons.account_circle,color: Colors.white,size: 35.0
+                  )),
+              Expanded(
+                flex: 2,
+                  child: Icon(
+                      Icons.person_remove_alt_1_rounded,color: Colors.white,size: 15.0
+                  )),
+              Expanded(child: Icon(Icons.list_alt_sharp,color: Colors.white,size: 25.0)),
+            ],
+          ),
+        )
+    );
+  }
+}
+
+
+class ColumnDemo extends StatelessWidget {
+  const ColumnDemo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('column alignment demo'),
+        centerTitle: true,
+      ),
+      body:Container(
+        color: Colors.black,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(Icons.account_circle,color: Colors.white,size: 35.0,),
+            Icon(Icons.person_remove_alt_1_rounded,color: Colors.white,size: 15.0,),
+            Icon(Icons.list_alt_sharp,color: Colors.white,size: 25.0,),
+          ],
+        ),
+      )
+    );
+  }
+}
+
+
+class RowDemo extends StatelessWidget {
+  const RowDemo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Row alignment demo'),
+      ),
+      body:Container(
+        color: Colors.cyanAccent,
+        child: Row(
+          // mainAxisAlignment: MainAxisAlignment.end,
+          // mainAxisAlignment: MainAxisAlignment.start,
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          // mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text('Username',style: TextStyle(color: Colors.pink),),
+            Icon(Icons.access_time_filled,color: Colors.pink,size: 50.4),
+            OutlinedButton(onPressed: (){}, child: Text('MyButton',style: TextStyle(color: Colors.pink),))
+          ],
+        ),
+      )
+    );
+  }
+}
+
 
 class ContainersDemo extends StatelessWidget {
   const ContainersDemo({super.key});
