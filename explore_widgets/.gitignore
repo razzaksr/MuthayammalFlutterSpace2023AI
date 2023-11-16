@@ -1,7 +1,3 @@
-images
-images/razak.png
-images/zealous.png
-
 # Miscellaneous
 *.class
 *.log
@@ -35,6 +31,7 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+images
 
 # Symbolication related
 app.*.symbols
