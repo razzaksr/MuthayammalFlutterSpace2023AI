@@ -16,6 +16,7 @@ class UsersList extends StatefulWidget {
 }
 
 class _UsersListState extends State<UsersList> {
+  late VoidCallback pointer;
   List<dynamic> newArraivals=[
     Loan("Home Loan", "General", 8.4, 5000000, 300),
     Loan("Gold Loan", "General", 9.2, 2000000, 12),
@@ -24,22 +25,34 @@ class _UsersListState extends State<UsersList> {
     Loan('Credit Card',"Business",13.7,100000,24)
   ];
 
-  Widget MyCard(Loan e){
+  Widget MyCard(Loan e,delete){
+    pointer=delete;
     return Card(
       margin: EdgeInsets.all(10.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           CircleAvatar(
             child: Icon(Icons.monetization_on,size: 20.0,),
             radius: 10.0,
           ),
+          SizedBox(width: 10,),
           Text("Loan Name ${e.schemeName}",style: TextStyle(fontSize: 18.0),),
-          Text("Loan Name ${e.schemeFor}",style: TextStyle(fontSize: 14.0),),
-          Text("Loan Name ${e.interest}",style: TextStyle(fontSize: 10.0),),
-          Text("Loan Name ${e.minEMI}",style: TextStyle(fontSize: 10.0),),
-          Text("Loan Name ${e.maxLimit}",style: TextStyle(fontSize: 10.0),),
+          SizedBox(width: 10,),
+          Text("Loan Eligible to ${e.schemeFor}",style: TextStyle(fontSize: 14.0),),
+          SizedBox(width: 10,),
+          Text("Loan Interest ${e.interest}",style: TextStyle(fontSize: 10.0),),
+          SizedBox(width: 10,),
+          Text("Loan Minimum Emi month ${e.minEMI}",style: TextStyle(fontSize: 10.0),),
+          SizedBox(width: 10,),
+          Text("Loan Maximum sanction ${e.maxLimit}",style: TextStyle(fontSize: 10.0),),
+          SizedBox(width: 10,),
+          OutlinedButton.icon(
+              onPressed: pointer,
+              icon: Icon(Icons.delete_forever_sharp),
+              label: Text('Trash'),
+          )
         ],
       ),
     );
@@ -56,7 +69,11 @@ class _UsersListState extends State<UsersList> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: newArraivals.map((e) =>
-              MyCard(e)
+              MyCard(e,(){
+                setState(() {
+                  newArraivals.remove(e);
+                });
+              })
           ).toList(),
         ),
         // child: Card(
