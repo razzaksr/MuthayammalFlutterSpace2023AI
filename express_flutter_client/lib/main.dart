@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:express_flutter_client/Student.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:toast/toast.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -47,13 +48,14 @@ class _EnrollState extends State<Enroll> {
     var response = await http.post(url,headers: myHeader,body: jsonEncode(myStudent));
     if(response.statusCode==200){
       var bdy=jsonDecode(response.body);
-      print(bdy['message']);
+      // print(bdy['message']);
+      Toast.show(bdy['message'],duration: Toast.lengthLong);
     }
   }
 
   @override
   Widget build(BuildContext context) {
-
+    ToastContext().init(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('MEC Placement Enroll'),
