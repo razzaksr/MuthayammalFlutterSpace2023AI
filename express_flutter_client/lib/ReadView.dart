@@ -1,6 +1,8 @@
 import 'dart:convert';
 
+import 'package:express_flutter_client/Modify.dart';
 import 'package:express_flutter_client/Student.dart';
+import 'package:express_flutter_client/main.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:toast/toast.dart';
@@ -34,6 +36,15 @@ class _ReadViewState extends State<ReadView> {
         //print(temporary.toString());
       }
       return temporary;
+  }
+
+  deleteInExpress(String stdId)async{
+    var url=Uri.parse("http://localhost:2020/del/${stdId}");
+    var response = await http.delete(url);
+    if(response.statusCode==200){
+      var acknowledge = jsonDecode(response.body);
+      Toast.show(acknowledge['message'],duration: Toast.lengthLong);
+    }
   }
 
   @override
@@ -77,13 +88,44 @@ class _ReadViewState extends State<ReadView> {
                       onTap: (){
                         Toast.show(myStudents[index].toString(),duration: Toast.lengthLong);
                       },
+                      trailing: PopupMenuButton(
+                        itemBuilder: (context) {
+                          return [
+                            PopupMenuItem(
+                              child: Text('Edit'),
+                              onTap: (){
+                                Navigator.pushReplacement(context, MaterialPageRoute(
+                                  builder: (context) => Modify(myStudents[index].student_id),
+                                ));
+                              },
+                            ),
+                            PopupMenuItem(
+                              child: Text('Delete'),
+                              onTap: (){
+                                deleteInExpress(myStudents[index].student_id);
+                                Navigator.pushReplacement(context, MaterialPageRoute(
+                                    builder:(context) => ReadView()
+                                ));
+                              },
+                            )
+                          ];
+                        },
+                      )
                     ),
                   );
                 },
             );
           }
         },
-      )
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.person_add,color: Colors.amberAccent,),
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context) => Enroll(),
+          ));
+        },
+      ),
     );
   }
 }
