@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:express_flutter_client/ReadView.dart';
 import 'package:express_flutter_client/Student.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -7,7 +8,8 @@ import 'package:toast/toast.dart';
 
 void main() {
   runApp(MaterialApp(
-    home:Enroll()
+    // home:Enroll()
+    home:ReadView()
   ));
 }
 
@@ -51,6 +53,9 @@ class _EnrollState extends State<Enroll> {
       // print(bdy['message']);
       Toast.show(bdy['message'],duration: Toast.lengthLong);
     }
+    studentIDController.text="";studentNameController.text="";
+    studentCgpaController.text="";studentSkillController.text="";
+    selectedDepartment="";selectedInterest="";
   }
 
   @override
