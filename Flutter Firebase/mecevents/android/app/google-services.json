@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "492351864438",
+    "project_id": "mecevents-26057",
+    "storage_bucket": "mecevents-26057.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492351864438:android:40d97423ac7bcb0127e957",
+        "android_client_info": {
+          "package_name": "com.example.mecevents"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlxzR-cJYhMoed16_9LdKK2-k9irPhqwI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
