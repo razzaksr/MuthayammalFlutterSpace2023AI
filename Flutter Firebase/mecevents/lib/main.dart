@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mecevents/ListEverything.dart';
+import 'package:mecevents/NewEvent.dart';
 import 'package:mecevents/firebase_options.dart';
 
 void main() async{
@@ -9,6 +10,7 @@ void main() async{
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(MaterialApp(
-    home:ListEverything()
+    // home:ListEverything()
+    home:NewEvent()
   ));
 }

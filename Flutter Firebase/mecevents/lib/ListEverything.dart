@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:mecevents/EventDrawer.dart';
 import 'package:toast/toast.dart';
 class ListEverything extends StatefulWidget {
   const ListEverything({super.key});
@@ -22,6 +23,7 @@ class _ListEverythingState extends State<ListEverything> {
         foregroundColor: Colors.amberAccent,
         backgroundColor: Colors.purple,
       ),
+      drawer: EventDrawer(),
       body:StreamBuilder(
         stream: fireStoreObject.collection("symposium").snapshots(),
         builder: (context, snapshot) {
