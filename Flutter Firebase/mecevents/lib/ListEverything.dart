@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:mecevents/EnrollContributors.dart';
 import 'package:mecevents/EventDrawer.dart';
 import 'package:toast/toast.dart';
 class ListEverything extends StatefulWidget {
@@ -64,6 +65,14 @@ class _ListEverythingState extends State<ListEverything> {
                       return [
                         PopupMenuItem(child: Text('Edit')),
                         PopupMenuItem(child: Text('Delete')),
+                        PopupMenuItem(
+                          child: Text('Enroll'),
+                          onTap: (){
+                            Navigator.pushReplacement(context, MaterialPageRoute(
+                              builder: (context) => EnrollContributors(documents[index].id),
+                            ));
+                          },
+                        ),
                       ];
                     },),
                   ),

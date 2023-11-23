@@ -10,7 +10,7 @@ void main() async{
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(MaterialApp(
-    // home:ListEverything()
-    home:NewEvent()
+    home:ListEverything()
+    // home:NewEvent()
   ));
 }
