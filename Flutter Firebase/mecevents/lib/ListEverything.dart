@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:mecevents/EnrollContributors.dart';
 import 'package:mecevents/EventDrawer.dart';
+import 'package:mecevents/Declaring.dart';
 import 'package:toast/toast.dart';
 class ListEverything extends StatefulWidget {
   const ListEverything({super.key});
@@ -70,6 +71,14 @@ class _ListEverythingState extends State<ListEverything> {
                           onTap: (){
                             Navigator.pushReplacement(context, MaterialPageRoute(
                               builder: (context) => EnrollContributors(documents[index].id),
+                            ));
+                          },
+                        ),
+                        PopupMenuItem(
+                          child: Text('Declare'),
+                          onTap: (){
+                            Navigator.pushReplacement(context, MaterialPageRoute(
+                              builder: (context) => Declaring(documents[index].id),
                             ));
                           },
                         ),
