@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mecevents/ListEverything.dart';
 import 'package:mecevents/NewEvent.dart';
 import 'package:mecevents/Shortlist.dart';
+import 'package:mecevents/SignIn.dart';
 class EventDrawer extends StatefulWidget {
   const EventDrawer({super.key});
 
@@ -10,6 +12,7 @@ class EventDrawer extends StatefulWidget {
 }
 
 class _EventDrawerState extends State<EventDrawer> {
+  final authentication = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -18,6 +21,18 @@ class _EventDrawerState extends State<EventDrawer> {
         color: Colors.amberAccent,
         child: ListView(
           children: [
+            ListTile(
+              title: Text(authentication.currentUser!.email.toString(),style: TextStyle(color: Colors.purple),),
+              leading: CircleAvatar(
+                child: Icon(Icons.person),
+              ),
+              onTap: (){
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(
+                  builder: (context) => ListEverything(),
+                ));
+              },
+            ),
             ListTile(
               title: Text('View All Events',style: TextStyle(color: Colors.purple),),
               leading: CircleAvatar(
@@ -51,6 +66,19 @@ class _EventDrawerState extends State<EventDrawer> {
                 Navigator.pushReplacement(
                     context, MaterialPageRoute(
                   builder: (context) => Shortlist(),
+                ));
+              },
+            ),
+            ListTile(
+              title: Text('Logout',style: TextStyle(color: Colors.purple),),
+              leading: CircleAvatar(
+                child: Icon(Icons.person_remove_alt_1),
+              ),
+              onTap: (){
+                authentication.signOut();
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(
+                  builder: (context) => SignIn(),
                 ));
               },
             ),
