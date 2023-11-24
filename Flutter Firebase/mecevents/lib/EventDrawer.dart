@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mecevents/ListEverything.dart';
 import 'package:mecevents/NewEvent.dart';
+import 'package:mecevents/Shortlist.dart';
 class EventDrawer extends StatefulWidget {
   const EventDrawer({super.key});
 
@@ -40,7 +41,19 @@ class _EventDrawerState extends State<EventDrawer> {
                   builder: (context) => NewEvent(),
                 ));
               },
-            )
+            ),
+            ListTile(
+              title: Text('Shortlist Events',style: TextStyle(color: Colors.purple),),
+              leading: CircleAvatar(
+                child: Icon(Icons.filter_alt_outlined),
+              ),
+              onTap: (){
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(
+                  builder: (context) => Shortlist(),
+                ));
+              },
+            ),
           ],
         ),
       ),
