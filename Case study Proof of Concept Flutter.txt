@@ -1,0 +1,26 @@
+Case study/ Proof of Concept: Flutter Firebase App
+1. Book Stall:
+	Add books, fetch book by id, update, delte when stock is over, search book by author, title and genre
+
+2. Receipe Repository:
+	Add Receipe, search receipe by category(like starter, main course, dessert), update receipe, delete
+
+3. Agirculture Seed Repository:
+	Add seed info, update, search seed based on type, cultivateDuration, price, amount and delete
+
+4. Contact App:
+	Build an contact app which could save informations such as name, number, email
+	a. add contact
+	b. fetch contact by number
+	c. fetch contact by email
+	d. fetch contact by name
+	e. delete contact
+
+5. Assembly Repository:
+	Build an app which store assembly information such as assembly number, assembly name, assembly population, assembly major issues, assembly member
+	a. add assembly
+	b. edit assembly information
+	c. fetch assembly by number
+	d. fetch assembly by name
+	c. fetch assembly by population
+	d. fetch assembly by specific issue
