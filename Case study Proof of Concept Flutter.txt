@@ -1,12 +1,12 @@
 Case study/ Proof of Concept: Flutter Firebase App
-1. Book Stall:
+1. Book Stall: Book id, title, author, quantity,price,genre
 	Add books, fetch book by id, update, delte when stock is over, search book by author, title and genre
 
-2. Receipe Repository:
+2. Receipe Repository: id, name, cuisine, category, ingredients(array), 
 	Add Receipe, search receipe by category(like starter, main course, dessert), update receipe, delete
 
-3. Agirculture Seed Repository:
-	Add seed info, update, search seed based on type, cultivateDuration, price, amount and delete
+3. Agirculture Seed Repository: Seed name, type, season, duration, price
+	Add seed info, update, search seed based on type, cultivateDuration, price and delete
 
 4. Contact App:
 	Build an contact app which could save informations such as name, number, email
@@ -17,10 +17,18 @@ Case study/ Proof of Concept: Flutter Firebase App
 	e. delete contact
 
 5. Assembly Repository:
-	Build an app which store assembly information such as assembly number, assembly name, assembly population, assembly major issues, assembly member
+	Build an app which store assembly information such as assembly number, assembly name, assembly population, assembly major issues(array), assembly member
 	a. add assembly
 	b. edit assembly information
 	c. fetch assembly by number
 	d. fetch assembly by name
 	c. fetch assembly by population
 	d. fetch assembly by specific issue
+
+6. Travel Guide: Package name, package price, transport mode, spots(array), members count, season
+	a. new package
+	b. enquiry by members count
+	c. enquiry by spot	
+	d. enquiry by season
+	e. enquiry by price
+	
