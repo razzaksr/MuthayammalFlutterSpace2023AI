@@ -1,0 +1,38 @@
+GET http://localhost:2020/
+
+###
+
+POST http://localhost:2020/
+Content-Type: application/json
+
+{
+    "student_id":"10CS011",
+    "student_name":"Sheik A",
+    "student_dept":"ai",
+    "student_skill":"flutter",
+    "student_cgpa":7.1,
+    "student_interest":"it"
+}
+
+###
+GET http://localhost:2020/department/it
+
+###
+GET http://localhost:2020/find/09CS040
+
+###
+
+PUT http://localhost:2020/up
+Content-Type: application/json
+
+{
+    "student_id":"10CS011",
+    "student_name":"Sheik Ameeth A",
+    "student_dept":"it",
+    "student_skill":"flutter",
+    "student_cgpa":7.1,
+    "student_interest":"it"
+}
+
+###
+DELETE http://localhost:2020/del/10CS1000
